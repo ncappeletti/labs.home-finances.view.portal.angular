@@ -1,1 +1,1 @@
-# labs.home-finances.view.portal.angularjs
+# labs.home-finances.view.portal.angular
