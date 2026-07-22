@@ -1,0 +1,27 @@
+{
+  "name": "Home Finances Portal Angular",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "mounts": [
+    "source=home-finances-npm-cache,target=/home/vscode/.npm,type=volume"
+  ],
+  "forwardPorts": [4200],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "angular.ng-template",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "postCreateCommand": "sudo chown -R vscode:vscode /home/vscode/.npm && npm install",
+  "remoteEnv": {
+    "CHOKIDAR_USEPOLLING": "true",
+    "PATH": "/workspace/node_modules/.bin:${containerEnv:PATH}"
+  }
+}
