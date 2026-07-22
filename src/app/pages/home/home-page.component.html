@@ -1,0 +1,13 @@
+<h1> Home </h1>
+
+<ul>
+    <!-- 2. Llamamos a la señal como función: misItems() -->
+    @for (item of items(); track item?.date) {
+    <li>
+        <p> Date: {{ item?.date }} - TemperatureC: {{ item?.temperatureC }} - TemperatureF: {{ item?.temperatureF }} -
+            Summary: {{ item?.summary }} </p>
+    </li>
+    } @empty {
+    <li>La lista está vacía.</li>
+    }
+</ul>
